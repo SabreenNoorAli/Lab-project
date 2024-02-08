@@ -6,24 +6,52 @@ date: "2024-02-08"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# Install and load necessary packages
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+library(tidyverse)
 ```
 
-## R Markdown
+``` {r}
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# Set the path to the root folder containing your data folders
+root_folder <- "EDLD/Lab/MILO/MILO - Participant Data"
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Create an empty data frame to store the combined data
+combined_data <- data.frame()
 
-```{r cars}
-summary(cars)
+# Function to read and combine data from files in a folder
+read_and_combine_data <- function(EDLD/Lab/MILO/MILO - Participant Data) {
+  # Get a list of file paths in the folder
+  file_paths <- list.files(path = folder_path, full.names = TRUE)
+
+  # Read data from each file and combine into a data frame
+  data <- bind_rows(lapply(file_paths, read_excel))
+
+  return(data)
+}
+
+# Iterate through each folder in the root folder
+for (folder_name in list.files(root_folder)) {
+  folder_path <- file.path(root_folder, folder_name)
+
+  # Check if the item in the root folder is a directory
+  if (file.info(folder_path)$isdir) {
+    # Read and combine data from files in the folder
+    folder_data <- read_and_combine_data(folder_path)
+
+    # Append the data to the combined data frame
+    combined_data <- bind_rows(combined_data, folder_data)
+  }
+}
+
+# Write the combined data to a CSV file (adjust the format if needed)
+output_csv_path <- "/path/to/your/output/file.csv"
+write_excel(combined_data, output_excel_path)
+
+cat(paste("Combined data has been saved to", output_csv_path, "\n"))
+
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
