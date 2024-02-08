@@ -1,0 +1,26 @@
+---
+title: "Progress 1"
+output: pdf_document
+date: "2024-02-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## what precisely you have accomplished since the last progress report
+
+Worked on creating Git Repo. 
+Added code chunk with code to get the file path
+
+## any necessary revisions to your product moving forward
+
+Not at the moment. I think I can accomplish atleast combining the files into one big data file. 
+
+## anticipated timelines for the remaining components of your product
+
+Feb 14th: Get the files in one sheet by next week.
+Feb 21st: Get the variables out of the sheets
+Feb 28th: Start the corealtion analysis
