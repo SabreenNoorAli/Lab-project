@@ -1,0 +1,27 @@
+---
+title: "Progress 2"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-02-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## what precisely you have accomplished since the last progress report
+
+Still couldn't get the correct path to read teh data from external server. 
+Scheduled consultation. 
+
+## any necessary revisions to your product moving forward
+
+Not at the moment. I think I can accomplish atleast combining the files into one big data file. 
+
+## anticipated timelines for the remaining components of your product
+
+Feb 21th: Get the files in one sheet by next week.
+Feb 28st: Get the variables out of the sheets
+March 6th: Start the corealtion analysis
