@@ -1,0 +1,43 @@
+---
+title: "Progress 3"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-02-21"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## what precisely you have accomplished since the last progress report
+
+Got the correct path, and tried some codes.  
+
+for (i in seq_along(file_path)) {
+  file_contents[[i]] <- read_excel(
+    file_path[[i]]
+  )
+}
+
+This one is not working. I need help wuith debugging this one. 
+
+read_excel_files <- function(file_path) {
+  excel_files <- list.files(path = file_path, pattern = "\\.xlsx$", full.names = TRUE)
+  data_frames <- map(excel_files, ~ read_excel(.x))
+  combined_data <- do.call(rbind, data_frames)
+  return(combined_data)
+}
+
+Or this.
+
+## any necessary revisions to your product moving forward
+
+Not at the moment. I think I can accomplish atleast combining the files into one big data file. 
+
+## anticipated timelines for the remaining components of your product
+
+Feb 28st: Get the files in one sheet by next week
+          Get the variables out of the sheets
+March 6th: Start the corealtion analysis
