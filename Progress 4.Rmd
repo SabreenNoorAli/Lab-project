@@ -1,0 +1,44 @@
+---
+title: "Progress 4"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-02-28"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## what precisely you have accomplished since the last progress report
+
+Got the correct path, and tried some codes.  
+
+for(i in 1:length(file_path)){
+  tmp <- fs::dir_ls(file_path[i])
+  
+  w1 <- read_excel(paste0(tmp[grep('Wave 1', tmp)],'/001_ML_LEAT.xlsm'))
+  
+  w2 <- read.excel(paste0(tmp[grep('Wave 2', tmp)],'/001_ML_LEAT.xlsm'))
+  
+  w3 <- read.excel(paste0(tmp[grep('Wave 3', tmp)],'/001_ML_LEAT.xlsm'))
+ 
+  
+}
+
+
+fs::dir_ls(fs::dir_ls(file_path[1]))
+  fs::dir_ls(fs::dir_ls(file_path[1])[1])
+fs::dir_ls(fs::dir_ls(file_path[1])[2])
+fs::dir_ls(fs::dir_ls(file_path[1])[3])
+
+## any necessary revisions to your product moving forward
+
+Not at the moment. I think I can accomplish atleast combining the files into one big data file. 
+
+## anticipated timelines for the remaining components of your product
+
+Feb 28st: Get the files in one sheet by today
+          Get the variables out of the sheets
+March 6th: Start the corelation analysis
